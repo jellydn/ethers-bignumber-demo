@@ -1,22 +1,12 @@
 import { formatUnits, parseUnits } from "npm:@ethersproject/units";
-// import { BigNumber } from "npm:@ethersproject/bignumber";
+import { BigNumber, BigNumberish } from "npm:@ethersproject/bignumber";
 
-/**
- * Get decimal places of a number
- * @param val - number or string
- * @returns number of decimal places
- * @example getDecimalPlaces(300.59, 3) // 2
- */
-export function getDecimalPlaces(val: string | number, maxDigits = 8) {
-  const decimalPlaces = val.toString().split(".")[1]?.length ?? 0;
-  const roundTo = decimalPlaces > maxDigits ? maxDigits : decimalPlaces;
-  return roundTo;
+export function convertToCurrencyBigNumber(val: string | number): BigNumber {
+  return parseUnits(Number(val).toFixed(2), 2);
 }
 
-export function convertToBigNumber(val: string | number) {
-  // get decimal places of val and convert to string
-  const roundTo = getDecimalPlaces(val);
-  return parseUnits(Number(val).toFixed(roundTo), roundTo);
+export function convertFromCurrencyBigNumber(val: BigNumberish): string {
+  return formatUnits(val, 2);
 }
 
 // Learn more at https://deno.land/manual/examples/module_metadata#concepts
@@ -28,22 +18,23 @@ if (import.meta.main) {
 
   console.log(
     "Convert 300.59999999999997 =",
-    convertToBigNumber(300.59999999999997),
-    formatUnits(
-      convertToBigNumber(300.59999999999997),
-      getDecimalPlaces(300.59999999999997)
-    )
+    convertToCurrencyBigNumber(300.59999999999997),
+    convertFromCurrencyBigNumber(
+      convertToCurrencyBigNumber(300.59999999999997),
+    ),
   );
 
   console.log(
     "Convert 3.00600000 =",
-    convertToBigNumber(3.006),
-    formatUnits(convertToBigNumber(3.006), getDecimalPlaces(3.006))
+    convertToCurrencyBigNumber(3.006),
+    convertFromCurrencyBigNumber(convertToCurrencyBigNumber(3.006)),
   );
 
   console.log(
     `Convert MAX_SAFE_INTEGER: ${Number.MAX_SAFE_INTEGER} =`,
-    convertToBigNumber(Number.MAX_SAFE_INTEGER),
-    formatUnits(convertToBigNumber(Number.MAX_SAFE_INTEGER), 0)
+    convertToCurrencyBigNumber(Number.MAX_SAFE_INTEGER),
+    convertFromCurrencyBigNumber(
+      convertToCurrencyBigNumber(Number.MAX_SAFE_INTEGER),
+    ),
   );
 }

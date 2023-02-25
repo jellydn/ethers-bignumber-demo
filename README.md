@@ -28,36 +28,28 @@ Error: overflow [ See: https://links.ethers.org/v5-errors-NUMERIC_FAULT-overflow
 ## Solution
 
 ```typescript
-import { formatUnits, parseUnits } from "@ethersproject/units";
+import { formatUnits, parseUnits } from "npm:@ethersproject/units";
+import { BigNumber, BigNumberish } from "npm:@ethersproject/bignumber";
 
-/**
- * Get decimal places of a number
- * @param val - number or string
- * @returns number of decimal places
- * @example getDecimalPlaces(300.59, 3) // 2
- */
-function getDecimalPlaces(val: string | number, maxDigits = 8) {
-  const decimalPlaces = val.toString().split(".")[1]?.length || 0;
-  const roundTo = decimalPlaces > maxDigits ? maxDigits : decimalPlaces;
-  return roundTo;
+export function convertToCurrencyBigNumber(val: string | number): BigNumber {
+  return parseUnits(Number(val).toFixed(2), 2);
 }
 
-export function convertToBigNumber(val: string | number) {
-  // get decimal places of val and convert to string
-  const roundTo = getDecimalPlaces(val);
-  return parseUnits(Number(val).toFixed(roundTo), roundTo);
+export function convertFromCurrencyBigNumber(val: BigNumberish): string {
+  return formatUnits(val, 2);
 }
+
 ```
 
 ## Usage
 
 ```typescript
-convertToBigNumber(300.59999999999997); // BigNumber { _hex: "0x06ffb73300", _isBigNumber: true }
+convertToCurrencyBigNumber(300.59999999999997); //  BigNumber { _hex: "0x756c", _isBigNumber: true }
+    
+convertFromCurrencyBigNumber(
+  convertToCurrencyBigNumber(300.59999999999997),
+); //  300.6
 
-formatUnits(
-  convertToBigNumber(300.59999999999997),
-  getDecimalPlaces(300.59999999999997)
-); // 300.6
 ```
 
 ## Develop

@@ -54,7 +54,10 @@ export function convertToBigNumber(val: string | number) {
 ```typescript
 convertToBigNumber(300.59999999999997); // BigNumber { _hex: "0x06ffb73300", _isBigNumber: true }
 
-formatUnits(convertToBigNumber(300.59999999999997), 2); // 300.6
+formatUnits(
+  convertToBigNumber(300.59999999999997),
+  getDecimalPlaces(300.59999999999997)
+); // 300.6
 ```
 
 ## Develop

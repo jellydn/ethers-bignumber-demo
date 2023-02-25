@@ -1,0 +1,89 @@
+{
+  "version": "2",
+  "remote": {
+    "https://deno.land/std@0.177.0/fmt/colors.ts": "938c5d44d889fb82eff6c358bea8baa7e85950a16c9f6dae3ec3a7a729164471",
+    "https://deno.land/std@0.177.0/testing/_diff.ts": "1a3c044aedf77647d6cac86b798c6417603361b66b54c53331b312caeb447aea",
+    "https://deno.land/std@0.177.0/testing/_format.ts": "a69126e8a469009adf4cf2a50af889aca364c349797e63174884a52ff75cf4c7",
+    "https://deno.land/std@0.177.0/testing/asserts.ts": "984ab0bfb3faeed92ffaa3a6b06536c66811185328c5dd146257c702c41b01ab"
+  },
+  "npm": {
+    "specifiers": {
+      "@ethersproject/bignumber": "@ethersproject/bignumber@5.7.0",
+      "@ethersproject/units": "@ethersproject/units@5.7.0",
+      "ethers": "ethers@6.0.8"
+    },
+    "packages": {
+      "@adraffy/ens-normalize@1.8.9": {
+        "integrity": "sha512-93OmGCV0vO8+JQ3FHG+gZk/MPHzzMPDRiCiFcCQNTCnHaaxsacO3ScTPGlu2wX2dOtgfalbchPcw1cOYYjHCYQ==",
+        "dependencies": {}
+      },
+      "@ethersproject/bignumber@5.7.0": {
+        "integrity": "sha512-n1CAdIHRWjSucQO3MC1zPSVgV/6dy/fjL9pMrPP9peL+QxEg9wOsVqwD4+818B6LUEtaXzVHQiuivzRoxPxUGw==",
+        "dependencies": {
+          "@ethersproject/bytes": "@ethersproject/bytes@5.7.0",
+          "@ethersproject/logger": "@ethersproject/logger@5.7.0",
+          "bn.js": "bn.js@5.2.1"
+        }
+      },
+      "@ethersproject/bytes@5.7.0": {
+        "integrity": "sha512-nsbxwgFXWh9NyYWo+U8atvmMsSdKJprTcICAkvbBffT75qDocbuggBU0SJiVK2MuTrp0q+xvLkTnGMPK1+uA9A==",
+        "dependencies": {
+          "@ethersproject/logger": "@ethersproject/logger@5.7.0"
+        }
+      },
+      "@ethersproject/constants@5.7.0": {
+        "integrity": "sha512-DHI+y5dBNvkpYUMiRQyxRBYBefZkJfo70VUkUAsRjcPs47muV9evftfZ0PJVCXYbAiCgght0DtcF9srFQmIgWA==",
+        "dependencies": {
+          "@ethersproject/bignumber": "@ethersproject/bignumber@5.7.0"
+        }
+      },
+      "@ethersproject/logger@5.7.0": {
+        "integrity": "sha512-0odtFdXu/XHtjQXJYA3u9G0G8btm0ND5Cu8M7i5vhEcE8/HmF4Lbdqanwyv4uQTr2tx6b7fQRmgLrsnpQlmnig==",
+        "dependencies": {}
+      },
+      "@ethersproject/units@5.7.0": {
+        "integrity": "sha512-pD3xLMy3SJu9kG5xDGI7+xhTEmGXlEqXU4OfNapmfnxLVY4EMSSRp7j1k7eezutBPH7RBN/7QPnwR7hzNlEFeg==",
+        "dependencies": {
+          "@ethersproject/bignumber": "@ethersproject/bignumber@5.7.0",
+          "@ethersproject/constants": "@ethersproject/constants@5.7.0",
+          "@ethersproject/logger": "@ethersproject/logger@5.7.0"
+        }
+      },
+      "@noble/hashes@1.1.2": {
+        "integrity": "sha512-KYRCASVTv6aeUi1tsF8/vpyR7zpfs3FUzy2Jqm+MU+LmUKhQ0y2FpfwqkCcxSg2ua4GALJd8k2R76WxwZGbQpA==",
+        "dependencies": {}
+      },
+      "@noble/secp256k1@1.7.1": {
+        "integrity": "sha512-hOUk6AyBFmqVrv7k5WAw/LpszxVbj9gGN4JRkIX52fdFAj1UA61KXmZDvqVEm+pOyec3+fIeZB02LYa/pWOArw==",
+        "dependencies": {}
+      },
+      "aes-js@4.0.0-beta.3": {
+        "integrity": "sha512-/xJX0/VTPcbc5xQE2VUP91y1xN8q/rDfhEzLm+vLc3hYvb5+qHCnpJRuFcrKn63zumK/sCwYYzhG8HP78JYSTA==",
+        "dependencies": {}
+      },
+      "bn.js@5.2.1": {
+        "integrity": "sha512-eXRvHzWyYPBuB4NBy0cmYQjGitUrtqwbvlzP3G6VFnNRbsZQIxQ10PbKKHt8gZ/HW/D/747aDl+QkDqg3KQLMQ==",
+        "dependencies": {}
+      },
+      "ethers@6.0.8": {
+        "integrity": "sha512-j5smdMwn4t4vEARcfUv54mTJ2NMCorYLL51wPjFInEnrRr2SF5Sl9a7Z4DXS8UO1fBJVGHnjDDrF1b7msY3f7Q==",
+        "dependencies": {
+          "@adraffy/ens-normalize": "@adraffy/ens-normalize@1.8.9",
+          "@noble/hashes": "@noble/hashes@1.1.2",
+          "@noble/secp256k1": "@noble/secp256k1@1.7.1",
+          "aes-js": "aes-js@4.0.0-beta.3",
+          "tslib": "tslib@2.4.0",
+          "ws": "ws@8.5.0"
+        }
+      },
+      "tslib@2.4.0": {
+        "integrity": "sha512-d6xOpEDfsi2CZVlPQzGeux8XMwLT9hssAsaPYExaQMuYskwb+x1x7J371tWlbBdWHroy99KnVB6qIkUbs5X3UQ==",
+        "dependencies": {}
+      },
+      "ws@8.5.0": {
+        "integrity": "sha512-BWX0SWVgLPzYwF8lTzEy1egjhS4S4OEAHfsO8o65WOVsrnSRGaSiUaa9e0ggGlkMTtBlmOpEXiie9RUcBO86qg==",
+        "dependencies": {}
+      }
+    }
+  }
+}

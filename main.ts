@@ -1,4 +1,5 @@
 import { formatUnits, parseUnits } from "npm:@ethersproject/units";
+// import { BigNumber } from "npm:@ethersproject/bignumber";
 
 /**
  * Get decimal places of a number
@@ -20,6 +21,11 @@ export function convertToBigNumber(val: string | number) {
 
 // Learn more at https://deno.land/manual/examples/module_metadata#concepts
 if (import.meta.main) {
+  // Remove comment to see the error from BigNumber
+  // console.log(BigNumber.from("0.01"));
+  // console.log(BigNumber.from(1.23));
+  // console.log(BigNumber.from(Number.MAX_SAFE_INTEGER));
+
   console.log(
     "Convert 300.59999999999997 =",
     convertToBigNumber(300.59999999999997),

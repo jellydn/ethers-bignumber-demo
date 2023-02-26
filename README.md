@@ -3,6 +3,8 @@
  How to convert to BigNumber's ethers.js without error.
 </p>
 
+[![IT Man - Tech #34 - How to use BigNumber's ethers.js like PRO [Vietnamese]](https://i.ytimg.com/vi/uzE813GIeY4/hqdefault.jpg)](https://www.youtube.com/watch?v=uzE813GIeY4)
+
 ## Motivation
 
 You might have these kind of errors when use `BigNumber.from()` function.
@@ -38,18 +40,14 @@ export function convertToCurrencyBigNumber(val: string | number): BigNumber {
 export function convertFromCurrencyBigNumber(val: BigNumberish): string {
   return formatUnits(val, 2);
 }
-
 ```
 
 ## Usage
 
 ```typescript
 convertToCurrencyBigNumber(300.59999999999997); //  BigNumber { _hex: "0x756c", _isBigNumber: true }
-    
-convertFromCurrencyBigNumber(
-  convertToCurrencyBigNumber(300.59999999999997),
-); //  300.6
 
+convertFromCurrencyBigNumber(convertToCurrencyBigNumber(300.59999999999997)); //  300.6
 ```
 
 ## Develop
